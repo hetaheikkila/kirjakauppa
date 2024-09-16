@@ -24,7 +24,7 @@ public class BookController {
   
     @RequestMapping(value = "/add")
     public String addBook(Model model){
-    	model.addAttribute("book", new Book(null, null, 0, null, 0, null));
+    	model.addAttribute("book", new Book(null, null, 0, null, 0.0, null));
         return "addBook";
     }     
     

@@ -15,7 +15,7 @@ public class Book {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String author, isbn, title;
-    private int year;
+    private String year;
 	private double price;
 
 
@@ -24,20 +24,28 @@ public class Book {
 	@JoinColumn(name = "categoryid")
 	private Category category;
 
-	public Book(String string, String string2, int i, String string3, double d, Category category2) {
-	}
 
-	public Book(String author, String isbn, String title, int year, double price, Category category) {
+	public Book(String author, String isbn, String i, String title, double price, Category category) {
 		super();
 		this.author = author;
 		this.isbn = isbn;
 		this.title = title;
-        this.year = year;
+        this.year = i;
 		this.price = price;
 		this.category = category;
 	}
 
-	public Long getId() {
+
+
+
+    public Book(Object author2, Object isbn2, int i, Object title2, double price2, Object category2) {
+        //TODO Auto-generated constructor stub
+    }
+
+
+
+
+    public Long getId() {
 		return id;
 	}
 
@@ -68,11 +76,11 @@ public class Book {
 	public void settitle(String title) {
 		this.title = title;
 	}
-    public int getyear() {
+    public String getyear() {
 		return year;
 	}
 
-	public void setyear(int year) {
+	public void setyear(String year) {
 		this.year = year;
 	}
 	public double getPrice() {

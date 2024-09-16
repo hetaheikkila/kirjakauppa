@@ -23,20 +23,19 @@ public class Kirjakauppa24Application {
 	public CommandLineRunner demo(BookRepository bookRepository, CategoryRepository categoryRepository) {
 		return (args) -> {
 
-			Category category1 = new Category("Scifi");
+			Category category1 = new Category("Romance");
 			Category category2 = new Category("Thriller");
 			Category category3 = new Category("Novel");
 			categoryRepository.save(category1);
 			categoryRepository.save(category2);
 			categoryRepository.save(category3);
 
-			Book book1 = new Book("The Hidden Secrets", "Jane Doe", 2023, "978-1-234567-89-0", 12.99, category2);
-			Book book2 = new Book("Echoes of Destiny", "John Smith", 2021, "978-0-987654-32-1", 15.49, category3);
+			//String author, String isbn, int year, String title, double price, Category category
+			Book book1 = new Book("Hennig Mankell", "mau", "0", "Kasvoton kuolema", 12., category2);
+			Book book2 = new Book("Hennig Mankell", "mau", "0", "Riian verikoirat", 13.0, category3);
 			bookRepository.save(book1);
 			bookRepository.save(book2);
 
 		};
-
 	}
-
 }
